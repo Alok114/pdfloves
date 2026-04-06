@@ -124,32 +124,6 @@ export default function AboutPageClient({ locale }: AboutPageClientProps) {
           </div>
         </section>
 
-        {/* Technology Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-[hsl(var(--color-foreground))] mb-6 text-center">
-                {t('technology.title')}
-              </h2>
-              <div className="prose prose-lg max-w-none text-[hsl(var(--color-muted-foreground))]">
-                <p className="mb-4">
-                  {t('technology.description', { brand: tCommon('brand') })}
-                </p>
-                <ul className="list-disc pl-6 space-y-2 mb-4">
-                  <li>{t.rich('technology.list.nextjs', { strong1: (chunks) => <strong>{chunks}</strong> })}</li>
-                  <li>{t.rich('technology.list.wasm', { strong1: (chunks) => <strong>{chunks}</strong> })}</li>
-                  <li>{t.rich('technology.list.workers', { strong1: (chunks) => <strong>{chunks}</strong> })}</li>
-                  <li>{t.rich('technology.list.pdflib', { strong1: (chunks) => <strong>{chunks}</strong> })}</li>
-                  <li>{t.rich('technology.list.indexeddb', { strong1: (chunks) => <strong>{chunks}</strong> })}</li>
-                </ul>
-                <p>
-                  {t('technology.summary')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-16 bg-[hsl(var(--color-primary)/0.05)]">
           <div className="container mx-auto px-4">

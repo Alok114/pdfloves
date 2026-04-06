@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { Mail, MessageSquare, Github, Twitter, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MessageSquare, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
@@ -32,22 +32,8 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
       icon: Mail,
       title: t('methods.email.title'),
       description: t('methods.email.description'),
-      action: t('methods.email.action'),
-      href: 'mailto:contact@pdfcraft.gitu.net',
-    },
-    {
-      icon: Github,
-      title: t('methods.github.title'),
-      description: t('methods.github.description'),
-      action: t('methods.github.action'),
-      href: 'https://github.com/PDFCraftTool/pdfcraft',
-    },
-    {
-      icon: Twitter,
-      title: t('methods.twitter.title'),
-      description: t('methods.twitter.description'),
-      action: t('methods.twitter.action'),
-      href: 'https://x.com/PDFCraftTool',
+      action: 'contact@elaric.ai',
+      href: 'mailto:contact@elaric.ai',
     },
   ];
 
@@ -90,7 +76,7 @@ export default function ContactPageClient({ locale }: ContactPageClientProps) {
         {/* Contact Methods */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 max-w-sm mx-auto gap-6">
               {contactMethods.map((method, index) => {
                 const Icon = method.icon;
                 return (

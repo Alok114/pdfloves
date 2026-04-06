@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
-/* PDFCraft Design System - CSS Variables for Theming */
+/* PDFCraft Design System -> Pdfloves Design System */
 :root {
-  /* Primary Colors - Deep Blue/Indigo for trust and modern tech feel */
-  --color-primary: 226 71% 55%; /* #3b82f6 - slightly more vibrant */
+  /* Primary Colors - iLovePDF Red */
+  --color-primary: 359 86% 54%; /* #e5322d / 229, 50, 45 */
   --color-primary-foreground: 0 0% 100%;
-  --color-primary-hover: 226 71% 45%;
+  --color-primary-hover: 359 86% 45%;
   
   /* Secondary Colors - Slate for neutral elements */
-  --color-secondary: 215 20% 90%;
-  --color-secondary-foreground: 215 25% 15%;
-  --color-secondary-hover: 215 20% 80%;
+  --color-secondary: 210 40% 96%;
+  --color-secondary-foreground: 222 47% 11%;
+  --color-secondary-hover: 214 32% 91%;
   
-  /* Accent Colors - Teal/Cyan for highlights */
-  --color-accent: 172 66% 50%;
+  /* Accent Colors */
+  --color-accent: 359 86% 54%;
   --color-accent-foreground: 0 0% 100%;
   
   /* Background Colors */
-  --color-background: 210 40% 98%; /* Slightly off-white for depth */
+  --color-background: 210 20% 98%; /* Slightly off-white #f9fafb */
   --color-foreground: 222 47% 11%;
   
   /* Muted Colors */
@@ -31,7 +31,7 @@
   /* Border Colors */
   --color-border: 214 32% 91%;
   --color-input: 214 32% 91%;
-  --color-ring: 226 71% 55%;
+  --color-ring: 359 86% 54%;
   
   /* Destructive Colors */
   --color-destructive: 0 84% 60%;
@@ -58,18 +58,18 @@
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
   
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  /* Border Radius - Flatter design */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
   --radius-full: 9999px;
   
-  /* Shadows - Layered, smoother shadows for depth */
+  /* Shadows - Flatter shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
   --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
   
   /* Transitions */
@@ -80,18 +80,18 @@
 
 /* Dark Mode Theme */
 .dark {
-  --color-primary: 226 71% 60%;
+  --color-primary: 359 86% 54%;
   --color-primary-foreground: 222 47% 11%;
-  --color-primary-hover: 226 71% 70%;
+  --color-primary-hover: 359 86% 65%;
   
   --color-secondary: 215 20% 20%;
   --color-secondary-foreground: 210 40% 98%;
   --color-secondary-hover: 215 20% 30%;
   
-  --color-accent: 172 66% 50%;
+  --color-accent: 359 86% 54%;
   --color-accent-foreground: 222 47% 11%;
   
-  --color-background: 222 47% 7%; /* Darker background for more contrast */
+  --color-background: 222 47% 7%;
   --color-foreground: 210 40% 98%;
   
   --color-muted: 217 33% 13%;
@@ -102,7 +102,7 @@
   
   --color-border: 217 33% 15%;
   --color-input: 217 33% 15%;
-  --color-ring: 226 71% 60%;
+  --color-ring: 359 86% 54%;
 }
 
 /* Base Styles */
