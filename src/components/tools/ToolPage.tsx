@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { type Locale } from '@/lib/i18n/config';
 import { ToolProvider } from '@/lib/contexts/ToolContext';
+import { AdBanner } from '@/components/ui/AdBanner';
 
 export interface ToolPageProps {
   tool: Tool;
@@ -36,6 +37,9 @@ export function ToolPage({ tool, content, locale, children }: ToolPageProps) {
               >
                 {children}
               </section>
+
+              {/* Ad Banner */}
+              <AdBanner />
             </div>
           </section>
         </main>

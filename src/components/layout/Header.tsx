@@ -192,7 +192,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     { href: `/${locale}/tools/pdf-to-excel`, label: 'PDF to EXCEL' },
     { href: `/${locale}/tools/pdf-to-pptx`, label: 'PDF to POWERPOINT' },
     { href: `/${locale}/tools/image-to-pdf`, label: 'JPG to PDF' },
-    { href: `/${locale}/tools/pdf-to-image`, label: 'PDF to JPG' },
+    { href: `/${locale}/tools/pdf-to-jpg`, label: 'PDF to JPG' },
   ];
 
   const allToolCategories = [
@@ -216,7 +216,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
       { href: `/${locale}/tools/markdown-to-pdf`, label: 'HTML to PDF', toolId: 'markdown-to-pdf' },
     ]},
     { label: 'CONVERT FROM PDF', items: [
-      { href: `/${locale}/tools/pdf-to-image`, label: 'PDF to JPG', toolId: 'pdf-to-jpg' },
+      { href: `/${locale}/tools/pdf-to-jpg`, label: 'PDF to JPG', toolId: 'pdf-to-jpg' },
       { href: `/${locale}/tools/pdf-to-docx`, label: 'PDF to WORD', toolId: 'pdf-to-docx' },
       { href: `/${locale}/tools/pdf-to-pptx`, label: 'PDF to POWERPOINT', toolId: 'pdf-to-pptx' },
       { href: `/${locale}/tools/pdf-to-excel`, label: 'PDF to EXCEL', toolId: 'pdf-to-excel' },
