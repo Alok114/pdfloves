@@ -23,6 +23,12 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light dark" />
         <style dangerouslySetInnerHTML={{ __html: 'html{scrollbar-gutter:stable}' }} />
+        {/* Google AdSense */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4919055494097878"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         {children}
