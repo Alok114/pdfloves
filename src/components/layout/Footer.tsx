@@ -21,6 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const langRef = useRef<HTMLDivElement>(null);
 
   const footerLinks = [
+    { href: `/${locale}/blog`, label: 'Blog' },
     { href: `/${locale}/about`, label: t('navigation.about') },
     { href: `/${locale}/faq`, label: t('navigation.faq') },
     { href: `/${locale}/privacy`, label: t('navigation.privacy') },
