@@ -57,7 +57,7 @@ export default async function OpenSourcePage({ params }: Props) {
                 Original authors: PDFCraft Contributors
               </p>
               <p>
-                Modifications by: <span className="font-semibold">Elaric AI LLC</span> — UI redesign, branding, and feature updates.
+                Modifications by: <span className="font-semibold">Elaric AI Pvt.Ltd.</span> — UI redesign, branding, and feature updates.
               </p>
             </div>
           </section>
@@ -124,7 +124,7 @@ export default async function OpenSourcePage({ params }: Props) {
           <section className="mb-10">
             <h2 className="text-lg font-bold text-gray-800 mb-3 pb-2 border-b border-gray-200">Our Modifications</h2>
             <div className="bg-white rounded-lg border border-gray-200 p-5 text-sm text-gray-700">
-              <p className="mb-3">The following changes were made to the original PDFCraft codebase by Elaric AI LLC:</p>
+              <p className="mb-3">The following changes were made to the original PDFCraft codebase by Elaric AI Pvt.Ltd.:</p>
               <ul className="list-disc pl-5 space-y-1 text-gray-600">
                 <li>Complete UI redesign inspired by iLovePDF — new navbar, homepage layout, tool cards, and footer</li>
                 <li>Rebranding from PDFCraft to Pdfloves</li>
@@ -137,7 +137,7 @@ export default async function OpenSourcePage({ params }: Props) {
           </section>
 
           <div className="text-xs text-gray-400 pt-4 border-t border-gray-200">
-            &copy; {new Date().getFullYear()} Elaric AI LLC. All rights reserved. Pdfloves is not affiliated with PDFCraft contributors.
+            &copy; {new Date().getFullYear()} Elaric AI Pvt.Ltd. All rights reserved. Pdfloves is not affiliated with PDFCraft contributors.
           </div>
         </div>
       </main>

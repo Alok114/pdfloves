@@ -55,7 +55,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
         {/* Copyright + Attribution */}
         <div className="flex flex-col gap-0.5">
           <p className="text-xs text-gray-500">
-            &copy; {currentYear} Pdfloves&reg; &mdash; by <span className="font-medium">Elaric AI LLC</span>
+            &copy; {currentYear} Pdfloves&reg; &mdash; by <span className="font-medium">Elaric AI Pvt.Ltd.</span>
           </p>
           <p className="text-xs text-gray-400">
             Based on{' '}
