@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/app/globals.css';
+import '@/lib/polyfills';
 
 export const metadata: Metadata = {
   title: 'Pdfloves - Your PDF Editor',

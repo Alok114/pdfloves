@@ -8,6 +8,8 @@ export interface BlogPost {
   cardTextColor: string;
   cardLabel: string;
   content: string;
+  thumbnail?: string;
+  status?: 'draft' | 'published';
 }
 
 export const blogPosts: BlogPost[] = [

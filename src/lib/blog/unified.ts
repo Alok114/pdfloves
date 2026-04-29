@@ -18,7 +18,8 @@ export async function getAllPosts(): Promise<BlogPost[]> {
       console.error('Failed to fetch from database, falling back to static posts:', error);
     }
   }
-  return staticPosts;
+  // Add status field to static posts for compatibility
+  return staticPosts.map(post => ({ ...post, status: 'published' as const }));
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | undefined> {
@@ -30,7 +31,8 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | undefined>
       console.error('Failed to fetch from database, falling back to static posts:', error);
     }
   }
-  return staticPosts.find((p) => p.slug === slug);
+  const post = staticPosts.find((p) => p.slug === slug);
+  return post ? { ...post, status: 'published' as const } : undefined;
 }
 
 export async function getAllSlugs(): Promise<string[]> {
