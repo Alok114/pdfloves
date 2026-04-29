@@ -3,7 +3,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { getAllPosts } from '@/lib/blog/posts';
+import { getAllPosts } from '@/lib/blog/unified';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -24,7 +24,7 @@ export default async function BlogPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
   const [featured, ...rest] = posts;
 
   return (
@@ -48,16 +48,30 @@ export default async function BlogPage({ params }: Props) {
               <Link href={`/${locale}/blog/${featured.slug}`} className="group block">
                 <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row">
                   {/* Card thumbnail */}
-                  <div
-                    className="md:w-80 flex-shrink-0 flex items-center justify-center p-10 min-h-[200px]"
-                    style={{ backgroundColor: featured.cardBg }}
-                  >
-                    <span
-                      className="text-2xl font-bold leading-tight text-center"
-                      style={{ color: featured.cardTextColor }}
-                    >
-                      {featured.cardLabel}
-                    </span>
+                  <div className="md:w-80 flex-shrink-0 min-h-[200px] relative overflow-hidden">
+                    {featured.thumbnail ? (
+                      <img
+                        src={`/api/image-proxy?url=${encodeURIComponent(featured.thumbnail)}`}
+                        alt={featured.title}
+                        className="w-full h-full object-cover"
+                        style={{ minHeight: '200px' }}
+                      />
+                    ) : (
+                      <div
+                        className="w-full h-full flex items-center justify-center"
+                        style={{ 
+                          backgroundColor: featured.cardBg,
+                          minHeight: '200px'
+                        }}
+                      >
+                        <span
+                          className="text-2xl font-bold leading-tight text-center px-4"
+                          style={{ color: featured.cardTextColor }}
+                        >
+                          {featured.cardLabel}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   {/* Content */}
                   <div className="p-8 flex flex-col justify-center">
@@ -81,16 +95,30 @@ export default async function BlogPage({ params }: Props) {
               <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="group block">
                 <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
                   {/* Card thumbnail */}
-                  <div
-                    className="flex items-center justify-center p-8 min-h-[160px]"
-                    style={{ backgroundColor: post.cardBg }}
-                  >
-                    <span
-                      className="text-xl font-bold leading-tight text-center"
-                      style={{ color: post.cardTextColor }}
-                    >
-                      {post.cardLabel}
-                    </span>
+                  <div className="min-h-[160px] relative overflow-hidden">
+                    {post.thumbnail ? (
+                      <img
+                        src={`/api/image-proxy?url=${encodeURIComponent(post.thumbnail)}`}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                        style={{ minHeight: '160px' }}
+                      />
+                    ) : (
+                      <div
+                        className="w-full h-full flex items-center justify-center"
+                        style={{ 
+                          backgroundColor: post.cardBg,
+                          minHeight: '160px'
+                        }}
+                      >
+                        <span
+                          className="text-xl font-bold leading-tight text-center px-4"
+                          style={{ color: post.cardTextColor }}
+                        >
+                          {post.cardLabel}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   {/* Content */}
                   <div className="p-5 flex flex-col flex-1">

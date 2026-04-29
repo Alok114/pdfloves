@@ -9,8 +9,9 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for deployment flexibility
-  output: 'export',
+  // Note: Static export disabled to enable API routes for admin blog management
+  // If you need static export, you'll need to pre-generate blog posts at build time
+  // output: 'export',
 
   // Webpack configuration for WASM modules
   webpack: (config, { isServer, webpack }) => {
@@ -61,11 +62,18 @@ const nextConfig = {
   },
 
   // Image optimization configuration
-  // Note: unoptimized is required for static export
   images: {
-    unoptimized: true,
+    unoptimized: false,
     // Define allowed image formats
     formats: ['image/avif', 'image/webp'],
+    // Allow images from Supabase storage
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lryvyxwrpxlqsqajyouh.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
+    ],
     // Define device sizes for responsive images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     // Define image sizes for srcset

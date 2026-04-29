@@ -4,13 +4,13 @@ import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { getAllPosts, getPostBySlug } from '@/lib/blog/posts';
+import { getAllPosts, getPostBySlug, getAllSlugs } from '@/lib/blog/unified';
 import Link from 'next/link';
 
-export function generateStaticParams() {
-  const posts = getAllPosts();
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
   return locales.flatMap((locale) =>
-    posts.map((post) => ({ locale, slug: post.slug }))
+    slugs.map((slug) => ({ locale, slug }))
   );
 }
 
@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return {};
   return {
     title: `${post.title} | Pdfloves Blog`,
@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   // Parse simple markdown-like content into HTML sections
