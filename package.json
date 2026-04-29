@@ -15,7 +15,8 @@
     "check-admin-setup": "node scripts/check-setup.js",
     "migrate-blog": "node scripts/migrate-blog-posts.js",
     "test-blog-api": "node scripts/test-blog-api.js",
-    "reset-blog": "node scripts/reset-blog-posts.js"
+    "reset-blog": "node scripts/reset-blog-posts.js",
+    "generate-favicons": "node scripts/generate-favicons.js"
   },
   "dependencies": {
     "@matbee/libreoffice-converter": "^2.5.0",
@@ -63,7 +64,9 @@
     "fast-check": "^3.22.0",
     "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.0.0",
+    "to-ico": "^1.1.5",
     "typescript": "^5.6.3",
     "vitest": "^2.1.3"
   }

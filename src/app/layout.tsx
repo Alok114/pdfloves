@@ -6,10 +6,17 @@ export const metadata: Metadata = {
   title: 'Pdfloves - Your PDF Editor',
   description: 'Free online PDF tools for merging, splitting, compressing, and converting PDF files. All processing happens in your browser for maximum privacy.',
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
     shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
+  manifest: '/manifest.webmanifest',
 };
 
 // Root layout - provides the basic HTML structure
@@ -22,6 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="color-scheme" content="light dark" />
         <style dangerouslySetInnerHTML={{ __html: 'html{scrollbar-gutter:stable}' }} />
         {/* Google tag (gtag.js) */}
