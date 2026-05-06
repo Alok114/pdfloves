@@ -41,12 +41,6 @@ export default function RootLayout({
             __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-NCNWNG2WXG');`,
           }}
         />
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4919055494097878"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         {children}

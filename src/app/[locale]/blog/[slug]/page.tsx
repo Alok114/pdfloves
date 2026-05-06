@@ -7,12 +7,9 @@ import { Footer } from '@/components/layout/Footer';
 import { getAllPosts, getPostBySlug, getAllSlugs } from '@/lib/blog/unified';
 import Link from 'next/link';
 
-export async function generateStaticParams() {
-  const slugs = await getAllSlugs();
-  return locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug }))
-  );
-}
+// Force dynamic rendering so new posts appear without rebuilding
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function generateMetadata({
   params,
