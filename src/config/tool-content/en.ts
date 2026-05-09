@@ -1194,28 +1194,78 @@ export const toolContentEn: Record<string, ToolContent> = {
   // ==================== CONVERT FROM PDF ====================
 
   'pdf-to-jpg': {
-    title: 'PDF to JPG',
-    metaDescription: 'Convert PDF pages to JPG images. High-quality extraction with customizable resolution.',
-    keywords: ['pdf to jpg', 'pdf to jpeg', 'convert pdf to image', 'extract pdf images'],
+    title: 'Convert PDF to JPG Free Online',
+    metaDescription: 'Convert PDF to JPG free with PDFLoves. No signup, no watermark. Convert each PDF page to high-quality JPG in seconds.',
+    keywords: [
+      'convert pdf to jpg free',
+      'pdf to jpg',
+      'pdf to jpeg',
+      'convert pdf to image free',
+      'pdf to jpg online',
+      'free pdf to jpg converter',
+      'pdf to jpg no watermark',
+      'pdf to jpg no signup',
+    ],
     description: `
-      <p>PDF to JPG converts PDF document pages into high-quality JPG images. Extract all pages or select specific pages to convert, with customizable resolution and quality settings.</p>
-      <p>Perfect for extracting images from PDFs, creating thumbnails, or converting documents for web use.</p>
-      <p>All conversion happens in your browser, ensuring your documents remain private.</p>
+      <p>Convert PDF to JPG free — no signup, no watermark, no limits. PDFLoves converts every page of your PDF into a high-quality JPG image right in your browser. Nothing is uploaded to a server, so your files stay completely private.</p>
+      <p>Whether you need to share a document on social media, embed a PDF page in a presentation, or view a PDF without a reader app, converting to JPG is the fastest solution. Adjust the DPI and quality to get exactly the file size and sharpness you need.</p>
+      <p>All conversion happens locally in your browser — 100% free, instant, and private.</p>
     `,
     howToUse: [
-      { step: 1, title: 'Upload Your PDF', description: 'Drag and drop your PDF file or click to select.' },
-      { step: 2, title: 'Select Pages and Quality', description: 'Choose which pages to convert and set quality/DPI options.' },
-      { step: 3, title: 'Convert and Download', description: 'Click Convert to extract images and download as ZIP.' },
+      {
+        step: 1,
+        title: 'Upload Your PDF',
+        description: 'Drag and drop your PDF file into the upload area, or click to browse and select it from your device. No account required.',
+      },
+      {
+        step: 2,
+        title: 'Choose Quality and Pages',
+        description: 'Select which pages to convert (all pages or a custom range) and set your preferred DPI and JPEG quality for the output images.',
+      },
+      {
+        step: 3,
+        title: 'Download Your JPGs',
+        description: 'Click Convert. Each PDF page becomes a separate high-quality JPG. Download them individually or as a single ZIP archive.',
+      },
     ],
     useCases: [
-      { title: 'Web Publishing', description: 'Convert PDF pages to images for website use.', icon: 'globe' },
-      { title: 'Social Media', description: 'Extract pages as images for social media sharing.', icon: 'share-2' },
-      { title: 'Presentations', description: 'Convert PDF slides to images for presentations.', icon: 'presentation' },
+      {
+        title: 'Share on Social Media',
+        description: 'Convert PDF pages to JPG so you can post documents, infographics, or slides directly on Instagram, Twitter, or LinkedIn.',
+        icon: 'share-2',
+      },
+      {
+        title: 'Embed in Presentations',
+        description: 'Insert PDF pages as images into PowerPoint or Google Slides without needing a PDF reader or plugin.',
+        icon: 'presentation',
+      },
+      {
+        title: 'View Without a PDF Reader',
+        description: 'Convert PDFs to JPG to open and view them on any device or app that supports images — no PDF software needed.',
+        icon: 'image',
+      },
     ],
     faq: [
-      { question: 'What quality settings are available?', answer: 'You can set DPI from 72 to 300 and JPEG quality from 1-100.' },
-      { question: 'Can I convert specific pages only?', answer: 'Yes, you can select individual pages or page ranges to convert.' },
-      { question: 'How are multiple pages handled?', answer: 'Each page becomes a separate JPG file, downloaded as a ZIP archive.' },
+      {
+        question: 'Is this PDF to JPG converter really free?',
+        answer: 'Yes, completely free. There is no signup, no subscription, and no hidden cost. You can convert as many PDFs as you like at no charge.',
+      },
+      {
+        question: 'Is there a file size limit?',
+        answer: 'Most PDFs up to 100 MB are supported. Because all processing happens in your browser, very large files may take longer depending on your device.',
+      },
+      {
+        question: 'Will my files be deleted after conversion?',
+        answer: 'Your files are never uploaded to any server. All conversion happens locally in your browser, so there is nothing to delete — your files never leave your device.',
+      },
+      {
+        question: 'Can I convert multiple PDF pages to JPG?',
+        answer: 'Yes. Every page in your PDF is converted to its own JPG file. You can convert all pages at once or select a specific page range. Multiple images are packaged into a ZIP archive for easy download.',
+      },
+      {
+        question: 'What quality and DPI does the output JPG have?',
+        answer: 'You can choose the output DPI (72 to 300) and JPEG quality (1–100). For screen use, 96 DPI at quality 85 is a good balance. For print-ready images, use 300 DPI at quality 95 or higher.',
+      },
     ],
   },
 

@@ -42,6 +42,9 @@ export function ToolPage({ tool, content, locale, children }: ToolPageProps) {
               <AdBanner />
             </div>
           </section>
+
+          {/* SEO Content Section */}
+          <ToolSeoContent content={content} />
         </main>
 
         <Footer locale={locale as Locale} />
@@ -83,6 +86,76 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
         {content.metaDescription}
       </p>
     </header>
+  );
+}
+
+interface ToolSeoContentProps {
+  content: ToolContent;
+}
+
+function ToolSeoContent({ content }: ToolSeoContentProps) {
+  const hasHowTo = content.howToUse && content.howToUse.length > 0;
+  const hasFaq = content.faq && content.faq.length > 0;
+  const hasDescription = content.description && content.description.trim().length > 0;
+
+  if (!hasHowTo && !hasFaq && !hasDescription) return null;
+
+  return (
+    <section className="bg-white border-t border-gray-100 py-14" aria-label="About this tool">
+      <div className="max-w-3xl mx-auto px-4 space-y-12">
+
+        {/* How to Use */}
+        {hasHowTo && (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              How to Use {content.title}
+            </h2>
+            <ol className="space-y-4" aria-label="Steps">
+              {content.howToUse.map((step) => (
+                <li key={step.step} className="flex gap-4 items-start">
+                  <span
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 text-red-600 font-bold text-sm flex items-center justify-center"
+                    aria-hidden="true"
+                  >
+                    {step.step}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-gray-800">{step.title}</p>
+                    <p className="text-gray-500 text-sm mt-0.5">{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        {/* About / Why use this tool */}
+        {hasDescription && (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">About {content.title}</h2>
+            <div
+              className="prose prose-sm prose-gray max-w-none text-gray-600 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: content.description }}
+            />
+          </div>
+        )}
+
+        {/* FAQ */}
+        {hasFaq && (
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <dl className="space-y-6">
+              {content.faq.map((item, i) => (
+                <div key={i} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                  <dt className="font-semibold text-gray-800 mb-2">{item.question}</dt>
+                  <dd className="text-gray-500 text-sm leading-relaxed">{item.answer}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
