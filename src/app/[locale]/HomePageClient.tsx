@@ -8,6 +8,7 @@ import { getAllTools, getToolsByCategory } from '@/config/tools';
 import { type Locale } from '@/lib/i18n/config';
 import { type ToolCategory } from '@/types/tool';
 import { useState } from 'react';
+import { AdBanner } from '@/components/ui/AdBanner';
 
 interface HomePageClientProps {
   locale: Locale;
@@ -52,6 +53,11 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </p>
         </section>
 
+        {/* Ad Banner — below hero */}
+        <div className="bg-[#f5f5f5] border-b border-gray-200">
+          <AdBanner />
+        </div>
+
         {/* Category Tabs */}
         <section className="bg-white border-b border-gray-200 sticky top-14 z-40">
           <div className="max-w-7xl mx-auto px-4">
@@ -76,12 +82,18 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
         {/* Tools Grid */}
         <section className="py-8" aria-label="PDF Tools">
           <div className="max-w-7xl mx-auto px-4">
+            {/* Ad Banner — above tool grid */}
+            <AdBanner />
+
             <ToolGrid
               tools={displayedTools}
               locale={locale}
               localizedToolContent={localizedToolContent}
               className="gap-4"
             />
+
+            {/* Ad Banner — below tool grid */}
+            <AdBanner />
           </div>
         </section>
       </main>
