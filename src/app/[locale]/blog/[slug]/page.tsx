@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { getAllPosts, getPostBySlug, getAllSlugs } from '@/lib/blog/unified';
 import Link from 'next/link';
+import { AdBanner } from '@/components/ui/AdBanner';
 
 // Force dynamic rendering so new posts appear without rebuilding
 export const dynamic = 'force-dynamic';
@@ -42,6 +43,11 @@ export default async function BlogPostPage({ params }: Props) {
     .split('\n')
     .map((line) => line.trimEnd());
 
+  // Split content roughly in half for mid-article ad placement
+  const midpoint = Math.floor(sections.length / 2);
+  const firstHalf = sections.slice(0, midpoint);
+  const secondHalf = sections.slice(midpoint);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#f5f5f5]">
       <Header locale={locale as Locale} />
@@ -67,14 +73,35 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Ad Banner — below hero, above article */}
+        <div className="bg-white border-b border-gray-100">
+          <AdBanner />
+        </div>
+
         {/* Article body */}
         <div className="max-w-2xl mx-auto px-4 py-12">
           <article className="prose-custom">
-            <BlogContent lines={sections} />
+            {/* First half of article */}
+            <BlogContent lines={firstHalf} />
           </article>
 
+          {/* Ad Banner — mid article */}
+          <div className="my-8">
+            <AdBanner />
+          </div>
+
+          <article className="prose-custom">
+            {/* Second half of article */}
+            <BlogContent lines={secondHalf} />
+          </article>
+
+          {/* Ad Banner — end of article, above back link */}
+          <div className="mt-10 mb-4">
+            <AdBanner />
+          </div>
+
           {/* Back link */}
-          <div className="mt-12 pt-6 border-t border-gray-200">
+          <div className="pt-6 border-t border-gray-200">
             <Link
               href={`/${locale}/blog`}
               className="text-sm font-semibold text-[hsl(var(--color-primary))] hover:underline"

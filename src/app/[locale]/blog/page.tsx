@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { getAllPosts } from '@/lib/blog/unified';
 import Link from 'next/link';
+import { AdBanner } from '@/components/ui/AdBanner';
 
 // Force dynamic rendering so new posts appear without rebuilding
 export const dynamic = 'force-dynamic';
@@ -42,6 +43,11 @@ export default async function BlogPage({ params }: Props) {
           <p className="text-gray-500 text-base max-w-xl mx-auto">
             Guides, tips, and how-tos for working with PDFs — all free, all in your browser.
           </p>
+        </div>
+
+        {/* Ad Banner — below hero */}
+        <div className="bg-white border-b border-gray-100">
+          <AdBanner />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-12">
@@ -93,6 +99,11 @@ export default async function BlogPage({ params }: Props) {
             </div>
           )}
 
+          {/* Ad Banner — between featured post and grid */}
+          <div className="mb-10">
+            <AdBanner />
+          </div>
+
           {/* Grid of remaining posts */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((post) => (
@@ -138,6 +149,11 @@ export default async function BlogPage({ params }: Props) {
                 </div>
               </Link>
             ))}
+          </div>
+
+          {/* Ad Banner — below post grid */}
+          <div className="mt-10">
+            <AdBanner />
           </div>
         </div>
       </main>
