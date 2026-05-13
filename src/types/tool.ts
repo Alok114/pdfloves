@@ -1,5 +1,5 @@
 /**
- * Tool category types - 6 defined categories
+ * Tool category types - 6 defined categories + gif-tools
  */
 export type ToolCategory =
   | 'edit-annotate'
@@ -7,7 +7,8 @@ export type ToolCategory =
   | 'convert-from-pdf'
   | 'organize-manage'
   | 'optimize-repair'
-  | 'secure-pdf';
+  | 'secure-pdf'
+  | 'gif-tools';
 
 /**
  * All valid tool categories as an array for validation
@@ -19,6 +20,7 @@ export const TOOL_CATEGORIES: ToolCategory[] = [
   'organize-manage',
   'optimize-repair',
   'secure-pdf',
+  'gif-tools',
 ];
 
 /**
@@ -70,6 +72,12 @@ export const CATEGORY_INFO: Record<ToolCategory, CategoryInfo> = {
     name: 'Secure PDF',
     description: 'Encrypt, decrypt, and secure PDF files',
     icon: 'shield',
+  },
+  'gif-tools': {
+    id: 'gif-tools',
+    name: 'GIF Tools',
+    description: 'Create, convert, and analyze animated GIFs',
+    icon: 'film',
   },
 };
 

@@ -3,17 +3,16 @@
  * Requirements: 9.2
  * 
  * Provides a skip link for keyboard users to bypass navigation
- * and jump directly to main content
+ * and jump directly to main content.
+ * Rendered only on client to avoid SSR/hydration mismatch.
  */
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export interface SkipLinkProps {
-  /** Target element ID to skip to */
   targetId?: string;
-  /** Link text */
   children: React.ReactNode;
 }
 
@@ -21,6 +20,11 @@ export const SkipLink: React.FC<SkipLinkProps> = ({
   targetId = 'main-content',
   children,
 }) => {
+  // Only render on client to avoid hydration mismatch
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) return null;
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById(targetId);

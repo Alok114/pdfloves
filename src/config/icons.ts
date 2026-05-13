@@ -68,7 +68,8 @@ import {
     ImageDown,
     Table,
     LayoutDashboard,
-    TabletSmartphone
+    TabletSmartphone,
+    Film,
 } from 'lucide-react';
 
 export const ICON_MAP: Record<string, LucideIcon> = {
@@ -143,7 +144,8 @@ export const ICON_MAP: Record<string, LucideIcon> = {
     'image-down': ImageDown,
     'table': Table,
     'layout-dashboard': LayoutDashboard,
-    'tablet-smartphone': TabletSmartphone
+    'tablet-smartphone': TabletSmartphone,
+    'film': Film,
 };
 
 export const getToolIcon = (iconName: string): LucideIcon => {

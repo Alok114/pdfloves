@@ -91,6 +91,8 @@ import { OCGManagerTool } from '@/components/tools/ocg-manager';
 import { PDFReaderTool } from '@/components/tools/pdf-reader';
 import { DigitalSignPDFTool } from '@/components/tools/digital-sign';
 import { ValidateSignatureTool } from '@/components/tools/validate-signature';
+import { Mp4ToGifTool } from '@/components/tools/mp4-to-gif';
+import { GifMakerTool, GifConverterTool, GifAnalyzerTool } from '@/components/tools/gif-tools';
 import { generateToolMetadata } from '@/lib/seo/metadata';
 import { JsonLd } from '@/components/seo/JsonLd';
 import {
@@ -416,6 +418,31 @@ export default async function ToolPageRoute({ params }: ToolPageParams) {
         return <DigitalSignPDFTool />;
       case 'validate-signature':
         return <ValidateSignatureTool />;
+      case 'mp4-to-gif':
+        return <Mp4ToGifTool />;
+      // GIF Tools
+      case 'gif-maker':
+        return <GifMakerTool />;
+      case 'video-to-gif':
+        return <GifConverterTool mode="video-to-gif" />;
+      case 'gif-to-mp4':
+        return <GifConverterTool mode="gif-to-mp4" />;
+      case 'gif-to-webm':
+        return <GifConverterTool mode="gif-to-mkv" />;
+      case 'gif-to-mov':
+        return <GifConverterTool mode="gif-to-mov" />;
+      case 'webp-to-gif':
+        return <GifConverterTool mode="webp-to-gif" />;
+      case 'apng-to-gif':
+        return <GifConverterTool mode="apng-to-gif" />;
+      case 'avif-to-gif':
+        return <GifConverterTool mode="avif-to-gif" />;
+      case 'jxl-to-gif':
+        return <GifConverterTool mode="jxl-to-gif" />;
+      case 'svg-to-gif':
+        return <GifConverterTool mode="svg-to-gif" />;
+      case 'gif-analyzer':
+        return <GifAnalyzerTool />;
       // Add more tool cases here as they are implemented
       default:
         return (

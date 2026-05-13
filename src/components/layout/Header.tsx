@@ -30,12 +30,14 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [allToolsOpen, setAllToolsOpen] = useState(false);
   const [convertOpen, setConvertOpen] = useState(false);
+  const [gifOpen, setGifOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [localizedTools, setLocalizedTools] = useState<Record<string, { title: string; description: string }>>({});
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const allToolsRef = useRef<HTMLDivElement>(null);
   const convertRef = useRef<HTMLDivElement>(null);
+  const gifRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
 
   // Load localized tool content on mount
@@ -64,6 +66,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
       }
       if (convertRef.current && !convertRef.current.contains(event.target as Node)) {
         setConvertOpen(false);
+      }
+      if (gifRef.current && !gifRef.current.contains(event.target as Node)) {
+        setGifOpen(false);
       }
       if (langRef.current && !langRef.current.contains(event.target as Node)) {
         setLangOpen(false);
@@ -195,6 +200,20 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
     { href: `/${locale}/tools/pdf-to-jpg`, label: 'PDF to JPG' },
   ];
 
+  const gifToolItems = [
+    { href: `/${locale}/tools/gif-maker`, label: 'GIF Maker' },
+    { href: `/${locale}/tools/video-to-gif`, label: 'Video to GIF' },
+    { href: `/${locale}/tools/gif-to-mp4`, label: 'GIF to MP4' },
+    { href: `/${locale}/tools/gif-to-webm`, label: 'GIF to MKV' },
+    { href: `/${locale}/tools/gif-to-mov`, label: 'GIF to MOV' },
+    { href: `/${locale}/tools/webp-to-gif`, label: 'WebP to GIF' },
+    { href: `/${locale}/tools/apng-to-gif`, label: 'APNG to GIF' },
+    { href: `/${locale}/tools/avif-to-gif`, label: 'AVIF to GIF' },
+    { href: `/${locale}/tools/jxl-to-gif`, label: 'JXL to GIF' },
+    { href: `/${locale}/tools/svg-to-gif`, label: 'SVG to GIF' },
+    { href: `/${locale}/tools/gif-analyzer`, label: 'GIF Analyzer' },
+  ];
+
   const allToolCategories = [
     { label: 'ORGANIZE PDF', items: [
       { href: `/${locale}/tools/merge-pdf`, label: 'Merge PDF', toolId: 'merge-pdf' },
@@ -276,9 +295,9 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
             ))}
 
             {/* CONVERT PDF dropdown */}
-            <div className="relative" ref={convertRef} onMouseEnter={() => { setConvertOpen(true); setAllToolsOpen(false); }} onMouseLeave={() => setConvertOpen(false)}>
+            <div className="relative" ref={convertRef} onMouseEnter={() => { setConvertOpen(true); setAllToolsOpen(false); setGifOpen(false); }} onMouseLeave={() => setConvertOpen(false)}>
               <button
-                onClick={() => { setConvertOpen(p => !p); setAllToolsOpen(false); }}
+                onClick={() => { setConvertOpen(p => !p); setAllToolsOpen(false); setGifOpen(false); }}
                 className={`px-3 h-14 flex items-center gap-1 text-xs font-bold tracking-wide transition-colors border-b-2 ${
                   convertOpen ? 'text-[hsl(var(--color-primary))] border-[hsl(var(--color-primary))]' : 'text-gray-700 hover:text-[hsl(var(--color-primary))] border-transparent'
                 }`}
@@ -304,8 +323,37 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
               )}
             </div>
 
+            {/* GIF TOOLS dropdown */}
+            <div className="relative" ref={gifRef} onMouseEnter={() => { setGifOpen(true); setConvertOpen(false); setAllToolsOpen(false); }} onMouseLeave={() => setGifOpen(false)}>
+              <button
+                onClick={() => { setGifOpen(p => !p); setConvertOpen(false); setAllToolsOpen(false); }}
+                className={`px-3 h-14 flex items-center gap-1 text-xs font-bold tracking-wide transition-colors border-b-2 ${
+                  gifOpen ? 'text-[hsl(var(--color-primary))] border-[hsl(var(--color-primary))]' : 'text-gray-700 hover:text-[hsl(var(--color-primary))] border-transparent'
+                }`}
+                aria-expanded={gifOpen}
+                aria-haspopup="true"
+              >
+                GIF TOOLS
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${gifOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
+              </button>
+              {gifOpen && (
+                <div className="absolute top-full left-0 mt-0 w-48 bg-white border border-gray-200 shadow-lg z-50 py-2">
+                  {gifToolItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setGifOpen(false)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[hsl(var(--color-primary))] transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* ALL PDF TOOLS dropdown */}
-            <div className="relative" ref={allToolsRef} onMouseEnter={() => { setAllToolsOpen(true); setConvertOpen(false); }} onMouseLeave={() => setAllToolsOpen(false)}>
+            <div className="relative" ref={allToolsRef} onMouseEnter={() => { setAllToolsOpen(true); setConvertOpen(false); setGifOpen(false); }} onMouseLeave={() => setAllToolsOpen(false)}>
               <button
                 onClick={() => { setAllToolsOpen(p => !p); setConvertOpen(false); }}
                 className={`px-3 h-14 flex items-center gap-1 text-xs font-bold tracking-wide transition-colors border-b-2 ${
@@ -513,6 +561,19 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                 >
                   ALL PDF TOOLS
                 </Link>
+              </li>
+              <li>
+                <p className="px-4 pt-3 pb-1 text-xs font-bold text-gray-400 uppercase tracking-wider">GIF Tools</p>
+                {gifToolItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[hsl(var(--color-primary))] transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </li>
             </ul>
           </nav>

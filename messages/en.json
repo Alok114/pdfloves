@@ -461,7 +461,8 @@
       "convertFromPdf": "Convert PDF to other formats",
       "organizeManage": "Organize, merge, split, and manage PDF pages",
       "optimizeRepair": "Compress, optimize, and repair PDF files",
-      "securePdf": "Encrypt, decrypt, and secure PDF files"
+      "securePdf": "Encrypt, decrypt, and secure PDF files",
+      "gifTools": "Create, convert, and analyze animated GIFs"
     },
     "stats": {
       "pdfTools": "PDF Tools",
@@ -476,7 +477,8 @@
       "convertFromPdf": "Convert from PDF",
       "organizeManage": "Organize & Manage",
       "optimizeRepair": "Optimize & Repair",
-      "securePdf": "Secure PDF"
+      "securePdf": "Secure PDF",
+      "gifTools": "GIF Tools"
     }
   },
   "workflow": {

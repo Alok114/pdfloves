@@ -47,6 +47,7 @@ export function ToolGrid({
     'organize-manage': 'organizeManage',
     'optimize-repair': 'optimizeRepair',
     'secure-pdf': 'securePdf',
+    'gif-tools': 'gifTools',
   };
 
   // Filter tools by category if specified
@@ -90,6 +91,7 @@ export function ToolGrid({
       'organize-manage': [],
       'optimize-repair': [],
       'secure-pdf': [],
+      'gif-tools': [],
     };
 
     for (const tool of filteredTools) {

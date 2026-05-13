@@ -2668,5 +2668,273 @@ export const toolContentEn: Record<string, ToolContent> = {
       { question: 'Why might a signature be invalid?', answer: 'Signatures may be invalid if the document was modified, the certificate expired, or the certificate is not trusted.' },
     ],
   },
+
+  // ==================== GIF TOOLS ====================
+
+  'gif-maker': {
+    title: 'Animated GIF Maker — Free Online',
+    metaDescription: 'Create animated GIFs from images free in your browser. Upload JPG, PNG, WebP and more. Set frame delay, loop, and resize. No signup.',
+    keywords: ['gif maker', 'animated gif maker', 'images to gif', 'make gif online', 'gif creator free'],
+    description: `<p>Create animated GIFs from multiple images entirely in your browser. Upload JPG, PNG, WebP, BMP, or other image formats, arrange the frames, set the delay between frames, and download your GIF instantly.</p><p>No upload to any server. Everything runs locally using FFmpeg WebAssembly.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload Images', description: 'Upload multiple images (JPG, PNG, WebP, etc.). They will become the frames of your GIF.' },
+      { step: 2, title: 'Set Options', description: 'Arrange frame order, set frame delay (speed), output width, and loop count.' },
+      { step: 3, title: 'Create & Download', description: 'Click Create GIF. Preview and download your animated GIF instantly.' },
+    ],
+    useCases: [
+      { title: 'Social Media', description: 'Turn a series of photos into a looping GIF for Twitter, Reddit, or messaging apps.', icon: 'share-2' },
+      { title: 'Presentations', description: 'Create animated diagrams or step-by-step visuals from screenshots.', icon: 'presentation' },
+      { title: 'Memes & Reactions', description: 'Combine images into a funny reaction GIF to share with friends.', icon: 'smile' },
+    ],
+    faq: [
+      { question: 'How many images can I use?', answer: 'Up to 200 images per GIF. For best results keep it under 50 frames.' },
+      { question: 'What image formats are supported?', answer: 'JPG, PNG, WebP, BMP, GIF (as a frame source), APNG, AVIF, SVG, and more.' },
+      { question: 'Is there a file size limit?', answer: 'No limit. All processing happens in your browser.' },
+    ],
+  },
+
+  'video-to-gif': {
+    title: 'Video to GIF Converter — Free Online',
+    metaDescription: 'Convert any video to animated GIF free in your browser. Supports MP4, MOV, WebM, AVI. Trim, resize, set FPS. No upload.',
+    keywords: ['video to gif', 'convert video to gif', 'mp4 to gif', 'mov to gif', 'webm to gif'],
+    description: `<p>Convert any video file (MP4, MOV, WebM, AVI, MKV) to an animated GIF directly in your browser. Trim the clip, set the frame rate, resize, and download — no server, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload Video', description: 'Drop an MP4, MOV, WebM, AVI, or MKV file.' },
+      { step: 2, title: 'Set Options', description: 'Trim start/end time, set FPS, output width.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert. Download your GIF instantly.' },
+    ],
+    useCases: [
+      { title: 'Social Media Clips', description: 'Turn short video clips into shareable GIFs.', icon: 'share-2' },
+      { title: 'Product Demos', description: 'Convert screen recordings to lightweight GIFs for docs.', icon: 'monitor' },
+      { title: 'Reaction GIFs', description: 'Clip the perfect moment from any video.', icon: 'smile' },
+    ],
+    faq: [
+      { question: 'What video formats are supported?', answer: 'MP4, MOV, WebM, AVI, and MKV.' },
+      { question: 'Is my video uploaded?', answer: 'No. Conversion runs entirely in your browser via FFmpeg WASM.' },
+      { question: 'Why is the GIF large?', answer: 'Lower the FPS (try 10) and reduce the width to get a smaller file.' },
+    ],
+  },
+
+  'gif-to-mp4': {
+    title: 'GIF to MP4 Converter — Free Online',
+    metaDescription: 'Convert animated GIF to MP4 video free in your browser. No upload, no signup. Fast and private.',
+    keywords: ['gif to mp4', 'convert gif to video', 'gif to mp4 free', 'animated gif to mp4'],
+    description: `<p>Convert animated GIF files to MP4 video entirely in your browser. MP4 files are much smaller than GIFs and play natively on all platforms. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload GIF', description: 'Drop your animated GIF file.' },
+      { step: 2, title: 'Set Quality', description: 'Choose output quality and resize if needed.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your MP4.' },
+    ],
+    useCases: [
+      { title: 'Smaller Files', description: 'MP4 is 5–10× smaller than GIF for the same content.', icon: 'minimize-2' },
+      { title: 'Social Media', description: 'Most platforms prefer MP4 over GIF for video posts.', icon: 'share-2' },
+      { title: 'Email', description: 'Send video clips via email without huge file sizes.', icon: 'mail' },
+    ],
+    faq: [
+      { question: 'Will the animation be preserved?', answer: 'Yes, all frames and timing are preserved in the MP4.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'What quality should I choose?', answer: 'Medium (CRF 23) is a good balance. Lower CRF = better quality, larger file.' },
+    ],
+  },
+
+  'gif-to-webm': {
+    title: 'GIF to MKV Converter — Free Online',
+    metaDescription: 'Convert animated GIF to MKV video free in your browser. Smaller files, better quality. No upload.',
+    keywords: ['gif to mkv', 'convert gif to mkv', 'gif to mkv free', 'animated gif to video'],
+    description: `<p>Convert animated GIF to MKV (Matroska) video format in your browser. MKV is significantly smaller than GIF and plays on every device. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload GIF', description: 'Drop your animated GIF file.' },
+      { step: 2, title: 'Set Options', description: 'Choose output width if needed.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your MKV.' },
+    ],
+    useCases: [
+      { title: 'Smaller Files', description: 'MKV is significantly smaller than GIF.', icon: 'minimize-2' },
+      { title: 'Universal Playback', description: 'MKV plays on VLC, Windows, macOS, and all modern devices.', icon: 'monitor' },
+      { title: 'Video Editing', description: 'Import GIF animations into video editors as MKV clips.', icon: 'film' },
+    ],
+    faq: [
+      { question: 'What is MKV?', answer: 'MKV (Matroska) is a universal video container that plays on VLC, Windows Media Player, and all modern devices.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'How much smaller is MKV vs GIF?', answer: 'Typically 5–20× smaller for the same visual quality.' },
+    ],
+  },
+
+  'gif-to-mov': {
+    title: 'GIF to MOV Converter — Free Online',
+    metaDescription: 'Convert animated GIF to MOV video free in your browser. Perfect for Apple devices. No upload.',
+    keywords: ['gif to mov', 'convert gif to mov', 'gif to quicktime', 'animated gif to mov'],
+    description: `<p>Convert animated GIF to MOV (QuickTime) video format in your browser. MOV is the native format for Apple devices and iMovie. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload GIF', description: 'Drop your animated GIF file.' },
+      { step: 2, title: 'Set Options', description: 'Choose quality and resize if needed.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your MOV.' },
+    ],
+    useCases: [
+      { title: 'Apple Devices', description: 'MOV plays natively on iPhone, iPad, and Mac.', icon: 'smartphone' },
+      { title: 'iMovie Editing', description: 'Import GIF animations into iMovie as MOV clips.', icon: 'film' },
+      { title: 'AirDrop Sharing', description: 'Share animations via AirDrop as MOV files.', icon: 'share-2' },
+    ],
+    faq: [
+      { question: 'Will the animation loop?', answer: 'MOV files do not loop by default. Use a video player or HTML5 loop attribute.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'Can I use this on iPhone?', answer: 'Yes, MOV files play natively on all Apple devices.' },
+    ],
+  },
+
+  'webp-to-gif': {
+    title: 'WebP to GIF Converter — Free Online',
+    metaDescription: 'Convert animated WebP to GIF free in your browser. No upload, no signup. Instant conversion.',
+    keywords: ['webp to gif', 'animated webp to gif', 'convert webp to gif', 'webp gif converter'],
+    description: `<p>Convert animated WebP images to GIF format entirely in your browser. Useful when you need GIF compatibility for platforms that don't support WebP. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload WebP', description: 'Drop your animated WebP file.' },
+      { step: 2, title: 'Set Options', description: 'Choose output width and quality.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your GIF.' },
+    ],
+    useCases: [
+      { title: 'Compatibility', description: 'Convert WebP to GIF for platforms that only accept GIF.', icon: 'globe' },
+      { title: 'Email Clients', description: 'Many email clients support GIF but not animated WebP.', icon: 'mail' },
+      { title: 'Legacy Support', description: 'Share animations with users on older software.', icon: 'refresh-ccw' },
+    ],
+    faq: [
+      { question: 'Does it support animated WebP?', answer: 'Yes, animated WebP files are fully supported.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'Will quality be lost?', answer: 'GIF is limited to 256 colors, so some color detail may be reduced.' },
+    ],
+  },
+
+  'apng-to-gif': {
+    title: 'APNG to GIF Converter — Free Online',
+    metaDescription: 'Convert animated PNG (APNG) to GIF free in your browser. No upload, no signup.',
+    keywords: ['apng to gif', 'animated png to gif', 'convert apng to gif', 'png to gif'],
+    description: `<p>Convert animated PNG (APNG) files to GIF format in your browser. APNG supports full color and transparency, while GIF offers universal compatibility. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload APNG', description: 'Drop your animated PNG file.' },
+      { step: 2, title: 'Set Options', description: 'Choose output width and quality.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your GIF.' },
+    ],
+    useCases: [
+      { title: 'Universal Sharing', description: 'GIF works everywhere — convert APNG for maximum compatibility.', icon: 'globe' },
+      { title: 'Social Media', description: 'Share animated stickers and icons as GIFs.', icon: 'share-2' },
+      { title: 'Messaging Apps', description: 'Most messaging apps support GIF natively.', icon: 'message-square' },
+    ],
+    faq: [
+      { question: 'What is APNG?', answer: 'APNG (Animated PNG) is a PNG extension that supports animation, similar to GIF but with better color depth.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'Will transparency be preserved?', answer: 'GIF supports binary transparency (on/off). Full alpha transparency from APNG will be approximated.' },
+    ],
+  },
+
+  'avif-to-gif': {
+    title: 'AVIF to GIF Converter — Free Online',
+    metaDescription: 'Convert animated AVIF to GIF free in your browser. No upload, no signup.',
+    keywords: ['avif to gif', 'animated avif to gif', 'convert avif to gif', 'avif gif converter'],
+    description: `<p>Convert animated AVIF images to GIF format in your browser. AVIF is a modern format with excellent compression; convert to GIF for universal compatibility. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload AVIF', description: 'Drop your animated AVIF file.' },
+      { step: 2, title: 'Set Options', description: 'Choose output width and quality.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your GIF.' },
+    ],
+    useCases: [
+      { title: 'Compatibility', description: 'Convert AVIF animations to GIF for platforms that don\'t support AVIF.', icon: 'globe' },
+      { title: 'Social Sharing', description: 'Share AVIF animations as universally supported GIFs.', icon: 'share-2' },
+      { title: 'Legacy Platforms', description: 'Use GIF on older platforms and email clients.', icon: 'refresh-ccw' },
+    ],
+    faq: [
+      { question: 'What is AVIF?', answer: 'AVIF is a modern image format based on AV1 codec, offering superior compression over JPEG and PNG.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'Does it support animated AVIF?', answer: 'Yes, animated AVIF sequences are supported.' },
+    ],
+  },
+
+  'jxl-to-gif': {
+    title: 'JXL to GIF Converter — Free Online',
+    metaDescription: 'Convert animated JPEG XL (JXL) to GIF free in your browser. No upload, no signup.',
+    keywords: ['jxl to gif', 'jpeg xl to gif', 'convert jxl to gif', 'jxl gif converter'],
+    description: `<p>Convert animated JPEG XL (JXL) images to GIF format in your browser. JXL is a next-generation image format; convert to GIF for maximum compatibility. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload JXL', description: 'Drop your animated JXL file.' },
+      { step: 2, title: 'Set Options', description: 'Choose output width and quality.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your GIF.' },
+    ],
+    useCases: [
+      { title: 'Compatibility', description: 'Convert JXL animations to GIF for universal support.', icon: 'globe' },
+      { title: 'Social Sharing', description: 'Share JXL animations as GIFs on any platform.', icon: 'share-2' },
+      { title: 'Email', description: 'Send animated content via email as GIF.', icon: 'mail' },
+    ],
+    faq: [
+      { question: 'What is JXL?', answer: 'JPEG XL (JXL) is a modern image format with better compression and quality than JPEG, supporting animation.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'Is JXL widely supported?', answer: 'JXL support is growing but not universal — converting to GIF ensures compatibility everywhere.' },
+    ],
+  },
+
+  'svg-to-gif': {
+    title: 'SVG to GIF Converter — Free Online',
+    metaDescription: 'Convert animated SVG to GIF free in your browser. No upload, no signup.',
+    keywords: ['svg to gif', 'animated svg to gif', 'convert svg to gif', 'svg gif converter'],
+    description: `<p>Convert animated SVG files to GIF format in your browser. Animated SVGs are great for web but GIF offers broader compatibility for sharing. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload SVG', description: 'Drop your animated SVG file.' },
+      { step: 2, title: 'Set Options', description: 'Choose output width, frame rate, and duration.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert and download your GIF.' },
+    ],
+    useCases: [
+      { title: 'Universal Sharing', description: 'Share SVG animations as GIFs on platforms that don\'t support SVG.', icon: 'share-2' },
+      { title: 'Email Animations', description: 'Embed animated content in emails as GIF.', icon: 'mail' },
+      { title: 'Social Media', description: 'Post SVG-based animations on social platforms as GIF.', icon: 'globe' },
+    ],
+    faq: [
+      { question: 'Does it support CSS animations in SVG?', answer: 'Basic CSS animations are supported. Complex JavaScript-driven animations may not render correctly.' },
+      { question: 'Is my file uploaded?', answer: 'No. Everything runs locally in your browser.' },
+      { question: 'What size should I set?', answer: 'Match the original SVG viewBox dimensions for best results.' },
+    ],
+  },
+
+  'gif-analyzer': {
+    title: 'GIF Analyzer — Inspect Animated GIFs',
+    metaDescription: 'Analyze animated GIF files free in your browser. View frame count, dimensions, duration, color palette, and preview each frame.',
+    keywords: ['gif analyzer', 'gif inspector', 'gif frame viewer', 'analyze gif', 'gif metadata'],
+    description: `<p>Analyze any animated GIF file in your browser. View detailed information including frame count, dimensions, total duration, loop count, color palette, and preview every individual frame. No upload, no signup.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload GIF', description: 'Drop your animated GIF file.' },
+      { step: 2, title: 'View Analysis', description: 'See frame count, dimensions, duration, loop count, and color palette instantly.' },
+      { step: 3, title: 'Browse Frames', description: 'Preview each individual frame and its delay time.' },
+    ],
+    useCases: [
+      { title: 'Debug Animations', description: 'Inspect frame timing and count to debug animation issues.', icon: 'search' },
+      { title: 'Optimize GIFs', description: 'Identify frames that can be removed to reduce file size.', icon: 'minimize-2' },
+      { title: 'Extract Frames', description: 'Preview and download individual frames from a GIF.', icon: 'image' },
+    ],
+    faq: [
+      { question: 'What information does the analyzer show?', answer: 'Frame count, dimensions (width × height), total duration, loop count, per-frame delay, and the color palette.' },
+      { question: 'Can I extract individual frames?', answer: 'Yes, you can preview and download each frame as a PNG image.' },
+      { question: 'Is my file uploaded?', answer: 'No. All analysis happens locally in your browser.' },
+    ],
+  },
+
+  'mp4-to-gif': {
+    title: 'MP4 to GIF Converter — Free & Online',
+    metaDescription: 'Convert MP4 videos to animated GIF free in your browser. Trim, resize, set frame rate and quality. No upload, no signup.',
+    keywords: ['mp4 to gif', 'video to gif', 'convert mp4 to gif', 'mp4 to gif free', 'animated gif maker', 'video converter online'],
+    description: `<p>Convert MP4 videos to animated GIF entirely in your browser — no upload, no server, no signup required. Trim the clip, resize, control frame rate, and download instantly.</p>`,
+    howToUse: [
+      { step: 1, title: 'Upload Your Video', description: 'Drag and drop an MP4, MOV, WebM, or AVI file, or click to browse.' },
+      { step: 2, title: 'Set Options', description: 'Trim the start and end time, choose output width, frame rate (FPS), and quality.' },
+      { step: 3, title: 'Convert & Download', description: 'Click Convert to GIF. Download your GIF instantly.' },
+    ],
+    useCases: [
+      { title: 'Social Media', description: 'Create short looping GIFs from video clips to share on Twitter, Reddit, or messaging apps.', icon: 'share-2' },
+      { title: 'Product Demos', description: 'Turn screen recordings into lightweight GIFs for documentation.', icon: 'monitor' },
+      { title: 'Reaction GIFs', description: 'Clip the perfect moment from any video.', icon: 'smile' },
+    ],
+    faq: [
+      { question: 'Is this MP4 to GIF converter really free?', answer: 'Yes, completely free. No signup, no watermark, no limits.' },
+      { question: 'Does my video get uploaded?', answer: 'No. Conversion runs entirely in your browser using FFmpeg WebAssembly.' },
+      { question: 'What video formats are supported?', answer: 'MP4, MOV, WebM, AVI, and MKV.' },
+      { question: 'Why is the GIF large?', answer: 'Lower the frame rate (e.g., 10 FPS) and reduce the width to get a smaller file.' },
+      { question: 'How long can the video clip be?', answer: 'No hard limit, but shorter clips (under 30 seconds) convert faster.' },
+    ],
+  },
 };
 

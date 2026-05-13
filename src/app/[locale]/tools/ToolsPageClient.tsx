@@ -36,6 +36,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
     'organize-manage': 'organizeManage',
     'optimize-repair': 'optimizeRepair',
     'secure-pdf': 'securePdf',
+    'gif-tools': 'gifTools',
   };
 
   // Read initial values from URL search params (client-side)
