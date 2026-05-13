@@ -2,22 +2,22 @@
 
 import { useEffect } from 'react';
 
-/**
- * Popunder ad — dynamically injects the ad script on the client.
- * The ad network handles frequency capping server-side.
- */
+// Module-level flag — survives React Strict Mode double-invoke
+// but resets on full page reload (which is what we want)
+let injected = false;
+
 export function PopunderAd() {
   useEffect(() => {
+    if (injected) return;
+    injected = true;
+
     const script = document.createElement('script');
     script.src =
       'https://pl29432373.profitablecpmratenetwork.com/f0/90/3d/f0903d91f415ccd146482a01822ec679.js';
-    script.async = true;
     script.type = 'text/javascript';
-    document.body.appendChild(script);
-
-    return () => {
-      try { document.body.removeChild(script); } catch {}
-    };
+    // Do NOT use async — popunder scripts need synchronous execution
+    // to attach their click listener before the page is interactive
+    document.head.appendChild(script);
   }, []);
 
   return null;
