@@ -6,6 +6,7 @@ import { localeConfig, type Locale, locales } from '@/lib/i18n/config';
 import { generateHomeMetadata } from '@/lib/seo';
 import { fontVariables } from '@/lib/fonts';
 import { SkipLink } from '@/components/common/SkipLink';
+import { PopunderAd } from '@/components/ads/PopunderAd';
 import '@/app/globals.css';
 
 export function generateStaticParams() {
@@ -73,6 +74,7 @@ export default async function LocaleLayout({
       <div lang={locale} dir={direction} className={`${fontVariables} min-h-screen bg-background text-foreground antialiased font-sans`}>
         <SkipLink targetId="main-content">Skip to main content</SkipLink>
         {children}
+        <PopunderAd />
       </div>
     </NextIntlClientProvider>
   );
